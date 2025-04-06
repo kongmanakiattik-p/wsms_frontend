@@ -1,0 +1,71 @@
+.services-container {
+  padding: 60px 40px;
+}
+
+.services-title {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.service-card {
+  background-color: white;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.service-card:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Adds shadow on hover */
+  transform: translateY(-5px); /* Slightly lifts the card */
+}
+
+.service-image {
+  height: 200px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+.bg-light {
+  background-color: #f0f0e8;
+}
+
+.bg-blue {
+  background-color: #e5e8ff;
+}
+
+.service-name {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  padding: 0 10px;
+}
+
+.service-description {
+  font-size: 14px;
+  color: #777;
+  padding: 0 10px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.service-card-link {
+  text-decoration: none;
+  color: inherit; /* Ensures the link inherits text color */
+  display: block; /* Makes the entire card clickable */
+}

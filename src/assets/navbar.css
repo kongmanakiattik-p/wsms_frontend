@@ -2,18 +2,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 0;
+    padding: 15px 20px; /* Added horizontal padding to create space from the border */
     border-bottom: 1px solid #eee;
-  }
+}
   
-  .logo h2 {
+.logo h2 {
     font-size: 1.5rem;
     font-weight: bold;
     display: flex;
     align-items: center;
-  }
+    margin-left: 10px; /* Adds space between the logo and the left edge */
+}
   
-  .logo h2:before {
+.logo h2:before {
     content: "";
     display: inline-block;
     width: 20px;
@@ -21,20 +22,21 @@
     background-color: #000;
     border-radius: 50%;
     margin-right: 10px;
-  }
+}
   
-  .nav-links {
+.nav-links {
     display: flex;
-  }
+    margin-right: 10px; /* Adds space between the nav-links and the right edge */
+}
   
-  .nav-link {
+.nav-link {
     margin-left: 20px;
     text-decoration: none;
     color: #333;
     font-size: 0.9rem;
-  }
+}
   
-  .nav-link:hover {
+.nav-link:hover {
     color: #000;
     text-decoration: underline;
-  }
+}

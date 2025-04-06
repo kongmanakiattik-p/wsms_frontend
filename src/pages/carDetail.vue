@@ -18,10 +18,12 @@
           </div>
         </div>
       </div>
+      <services />
     </div>
   </template>
   
   <script setup>
+  import services from '../components/Services.vue';
   const itemList = [
     { 
       title: 'Item Title', 
