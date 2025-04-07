@@ -1,0 +1,107 @@
+.user-register-container {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.user-content {
+  padding: 40px;
+  margin-top: 100px;
+  border-radius: 15px;
+  background: linear-gradient(90deg, rgba(215,217,251,1) 0%, rgba(243,245,231,1) 100%);
+}
+
+.user-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.user-subtitle {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.user-content {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.user-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+input,
+textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+textarea {
+  resize: none;
+  height: 80px;
+}
+
+input,textarea:placeholder-shown {
+  font-style: italic;
+}
+
+.textfield-sub {
+  color: grey;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 3px;
+}
+
+.textfield-sub-require {
+  color: rgba(255, 0, 0, 0.577);
+  font-weight: bold;
+  margin-top: 3px;
+  margin-bottom: 10px;
+}
+
+.register-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background-color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.register-button:hover {
+  background-color: #333;
+}
+
+.user-image {
+  flex: 1;
+  background: url("https://via.placeholder.com/600x400") no-repeat center center;
+  background-size: cover;
+  border-radius: 5px;
+  height: 100%;
+}
