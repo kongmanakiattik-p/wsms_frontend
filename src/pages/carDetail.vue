@@ -1,6 +1,6 @@
 <template>
     <div class="car-detail-container">
-      <h1 class="car-title">[Name Car]</h1>
+      <h1 class="car-title">[ Name Car ]</h1>
       <div class="car-details">
         <div class="car-image">
           <!-- Placeholder for car image -->
