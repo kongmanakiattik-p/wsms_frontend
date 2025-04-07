@@ -1,6 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Homepage from '../pages/Homepage.vue';
 import CarDetail from '../pages/CarDetail.vue';
+import ShortRent from '../pages/ShortRent.vue';
+import LongRent from '../pages/LongRent.vue';
+import CorporateRent from '../pages/CorporateRent.vue';
+import ChauffeurRent from '../pages/ChauffeurRent.vue';
 
 const routes = [
   {
@@ -12,6 +16,26 @@ const routes = [
     path: '/car-detail',
     name: 'CarDetail',
     component: CarDetail,
+  },
+  {
+    path: '/short-rent-service',
+    name: 'ShortRent',
+    component: ShortRent,
+  },
+  {
+    path: '/long-rent-service',
+    name: 'LongRent',
+    component: LongRent,
+  },
+  {
+    path: '/corporate-rent-service',
+    name: 'CorporateRent',
+    component: CorporateRent,
+  },
+  {
+    path: '/chauffeur-service',
+    name: 'ChauffeurRent',
+    component: ChauffeurRent,
   },
 ];
 
