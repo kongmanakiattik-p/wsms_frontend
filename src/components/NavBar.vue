@@ -5,9 +5,9 @@
     </div>
     <div class="nav-links">
       <RouterLink to="/" class="nav-link">Home</RouterLink>
-      <RouterLink to="/search" class="nav-link">Search</RouterLink>
-      <RouterLink to="/user-login" class="nav-link">User Login</RouterLink>
-      <RouterLink to="/affiliator-login" class="nav-link">Affiliator Login</RouterLink>
+      <RouterLink to="/search-car" class="nav-link">Search</RouterLink>
+      <RouterLink to="/login-user" class="nav-link">User Login</RouterLink>
+      <RouterLink to="/login-affiliator" class="nav-link">Affiliator Login</RouterLink>
     </div>
   </nav>
 </template>

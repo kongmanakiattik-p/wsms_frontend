@@ -1,5 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Homepage from '../pages/Homepage.vue';
+import LoginUser from '../pages/LoginUser.vue';
+import Userform from '../pages/Userform.vue';
+import LoginAffiliate from '../pages/LoginAffiliate.vue';
+import AffiliatorForm from '../pages/AffiliatorForm.vue';
+import SearchCar from '../pages/SearchCar.vue';
+
 import CarDetail from '../pages/CarDetail.vue';
 import ShortRent from '../pages/ShortRent.vue';
 import LongRent from '../pages/LongRent.vue';
@@ -37,6 +43,31 @@ const routes = [
     name: 'ChauffeurRent',
     component: ChauffeurRent,
   },
+  {
+    path: '/login-user',
+    name: 'LoginUser', 
+    component: LoginUser,
+  },
+  {
+    path: '/user-form',
+    name: 'Userform',
+    component: Userform,
+  },
+  {
+    path: '/login-affiliator',
+    name: 'LoginAffiliate',
+    component: LoginAffiliate,
+  },
+  {
+    path: '/affiliator-form',
+    name: 'AffiliatorForm',
+    component: AffiliatorForm,
+  },
+  {
+    path: '/search-car',
+    name: 'SearchCar',
+    component: SearchCar,
+  }
 ];
 
 const router = createRouter({
