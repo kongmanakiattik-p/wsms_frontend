@@ -9,7 +9,9 @@
         class="service-card-link"
       >
         <div class="service-card">
-          <div class="service-image" :class="service.bgColor"></div>
+          <div class="service-image">
+            <img :src="service.image" :alt="service.name" />
+          </div>
           <h3 class="service-name">{{ service.name }}</h3>
           <p class="service-description">{{ service.description }}</p>
         </div>
@@ -23,30 +25,41 @@ const services = [
   {
     name: 'เช่ารถระยะสั้น',
     description: 'รายวัน / รายสัปดาห์ / รายเดือน',
-    bgColor: 'bg-light',
-    link: '/short-rent-service', // Link to the short rent service page
+    image: '/src/assets/images/shortservice.png',
+    link: '/short-rent-service',
   },
   {
     name: 'เช่ารถระยะยาว',
     description: 'เช่ารถยนต์ 3-5 ปี',
-    bgColor: 'bg-light',
-    link: '/long-rent-service', // Link to the long rent service page
+    image: '/src/assets/images/longservice.png',
+    link: '/long-rent-service',
   },
   {
     name: 'เช่ารถสำหรับองค์กร',
     description: 'เช่ารถสำหรับบริษัทและองค์กร',
-    bgColor: 'bg-blue',
-    link: '/corporate-rent-service', // Link to the corporate rent service page
+    image: '/src/assets/images/corporateservice.png',
+    link: '/corporate-rent-service',
   },
   {
     name: 'เช่ารถพร้อมคนขับ',
     description: 'รถหรูพร้อมคนขับมืออาชีพ',
-    bgColor: 'bg-light',
-    link: '/chauffeur-service', // Link to the chauffeur service page
+    image: '/src/assets/images/chaufferservice.png',
+    link: '/chauffeur-service',
   },
 ];
 </script>
 
 <style scoped>
 @import '../assets/main-service.css';
+
+.service-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-image img {
+  transform: scale(1.05);
+}
 </style>

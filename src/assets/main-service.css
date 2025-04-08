@@ -14,28 +14,23 @@
 }
 
 .service-card {
-  background-color: white;
+  background-color: #f8f8f8;
   overflow: hidden;
-  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
 }
 
 .service-card:hover {
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Adds shadow on hover */
-  transform: translateY(-5px); /* Slightly lifts the card */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
 }
 
 .service-image {
   height: 200px;
   margin-bottom: 20px;
   border-radius: 4px;
-}
-
-.bg-light {
-  background-color: #f0f0e8;
-}
-
-.bg-blue {
-  background-color: #e5e8ff;
+  overflow: hidden;
 }
 
 .service-name {
@@ -66,6 +61,6 @@
 
 .service-card-link {
   text-decoration: none;
-  color: inherit; /* Ensures the link inherits text color */
-  display: block; /* Makes the entire card clickable */
+  color: inherit;
+  display: block;
 }
