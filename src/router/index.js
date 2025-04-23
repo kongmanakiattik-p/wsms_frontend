@@ -19,9 +19,13 @@ const routes = [
     component: Homepage, // Use Homepage.vue for the root route
   },
   {
-    path: '/car-detail',
+    path: '/car-detail/:id',
     name: 'CarDetail',
     component: CarDetail,
+    props: (route) => ({
+      id: route.params.id,
+      carData: route.query.car ? JSON.parse(route.query.car) : null
+    })
   },
   {
     path: '/short-rent-service',

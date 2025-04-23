@@ -1,11 +1,24 @@
 <script setup>
 import { ref, computed } from 'vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
 
 const selectedTypes = ref([]);
 const selectedBrands = ref([]);
 const selectedYears = ref([]);
 const minPrice = ref('');
 const maxPrice = ref('');
+const searchQuery = ref('');
+
+const viewCarDetail = (carId) => {
+  const selectedCar = cars.value.find(car => car.id === carId);
+  router.push({
+    name: 'CarDetail',
+    params: { id: carId },
+    query: { car: JSON.stringify(selectedCar) }
+  });
+};
 
 const cars = ref([
   { id: 1, name: 'Toyota Corolla Cross', type: 'suv', brand: 'toyota', price: 859000, year: 2023, location: 'กรุงเทพมหานคร', km: 20000 },
@@ -36,24 +49,43 @@ const filteredCars = computed(() => {
     const matchYear = selectedYears.value.length ? filterByYearRange(car.year, selectedYears.value) : true;
     const matchMinPrice = minPrice.value ? car.price >= parseInt(minPrice.value) : true;
     const matchMaxPrice = maxPrice.value ? car.price <= parseInt(maxPrice.value) : true;
-    return matchType && matchBrand && matchYear && matchMinPrice && matchMaxPrice;
+    const matchSearch = searchQuery.value ? 
+      car.name.toLowerCase().includes(searchQuery.value.toLowerCase()) || 
+      car.location.toLowerCase().includes(searchQuery.value.toLowerCase()) : true;
+    
+    return matchType && matchBrand && matchYear && matchMinPrice && matchMaxPrice && matchSearch;
   });
 });
 </script>
 
 <template>
   <div class="main-container">
+    <!-- Search Bar Section -->
+    <div class="search-bar-container">
+      <div class="search-bar">
+        <input 
+          type="text" 
+          v-model="searchQuery" 
+          placeholder="ค้นหารถยนต์ (ชื่อรถหรือสถานที่)" 
+          class="search-input"
+        />
+        <button class="search-button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
     <div class="search-container">
       <!-- Filter Section -->
       <div class="filter-section">
         <h2>ประเภทรถ</h2>
         <div class="filter-group">
-          <label><input type="checkbox" value="eco" v-model="selectedTypes" /> รถ ECO-Car</label>
-          <label><input type="checkbox" value="sedan" v-model="selectedTypes" /> รถเก๋ง ( 4 ประตู Sedan )</label>
+          <label><input type="checkbox" value="sedan" v-model="selectedTypes" /> รถเก๋ง</label>
+          <label><input type="checkbox" value="suv" v-model="selectedTypes" /> รถ SUV</label>
           <label><input type="checkbox" value="pickup" v-model="selectedTypes" /> รถกระบะ</label>
-          <label><input type="checkbox" value="suv" v-model="selectedTypes" /> รถ SUV ( 7 ที่นั่ง )</label>
-          <label><input type="checkbox" value="mpv" v-model="selectedTypes" /> รถยนต์อเนกประสงค์ ( MPV )</label>
-          <label><input type="checkbox" value="hatchback" v-model="selectedTypes" /> รถตู้</label>
+          <label><input type="checkbox" value="hatchback" v-model="selectedTypes" /> รถแฮทช์แบค</label>
         </div>
 
         <h2>ยี่ห้อรถ</h2>
@@ -90,7 +122,7 @@ const filteredCars = computed(() => {
           <h1>รถทั้งหมด [{{ filteredCars.length }}]</h1>
         </div>
         <div class="car-grid">
-          <div v-for="car in filteredCars" :key="car.id" class="car-card">
+          <div v-for="car in filteredCars" :key="car.id" class="car-card" @click="viewCarDetail(car.id)">
             <div class="car-image-placeholder">[รูป]</div>
             <div class="car-info">
               <h3>{{ car.name }}</h3>
@@ -112,6 +144,44 @@ const filteredCars = computed(() => {
   padding: 10px;
   width: 100%;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.search-bar-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.search-bar {
+  display: flex;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.search-input {
+  flex: 1;
+  padding: 12px 20px;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+}
+
+.search-button {
+  padding: 0 20px;
+  border: none;
+  background: #e53935;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-button:hover {
+  background: #c62828;
 }
 
 .search-container {
@@ -249,6 +319,10 @@ const filteredCars = computed(() => {
   
   .car-grid {
     grid-template-columns: 1fr;
+  }
+
+  .search-bar {
+    max-width: 100%;
   }
 }
 </style>
