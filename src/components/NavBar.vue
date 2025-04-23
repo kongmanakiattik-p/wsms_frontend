@@ -7,7 +7,6 @@
       <RouterLink to="/" class="nav-link">Home</RouterLink>
       <RouterLink to="/search-car" class="nav-link">Search</RouterLink>
       <RouterLink to="/login-user" class="nav-link">User Login</RouterLink>
-      <RouterLink to="/login-affiliator" class="nav-link">Affiliator Login</RouterLink>
     </div>
   </nav>
 </template>

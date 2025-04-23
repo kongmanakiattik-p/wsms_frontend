@@ -48,10 +48,12 @@ const filteredCars = computed(() => {
       <div class="filter-section">
         <h2>ประเภทรถ</h2>
         <div class="filter-group">
-          <label><input type="checkbox" value="sedan" v-model="selectedTypes" /> รถเก๋ง</label>
-          <label><input type="checkbox" value="suv" v-model="selectedTypes" /> รถ SUV</label>
+          <label><input type="checkbox" value="eco" v-model="selectedTypes" /> รถ ECO-Car</label>
+          <label><input type="checkbox" value="sedan" v-model="selectedTypes" /> รถเก๋ง ( 4 ประตู Sedan )</label>
           <label><input type="checkbox" value="pickup" v-model="selectedTypes" /> รถกระบะ</label>
-          <label><input type="checkbox" value="hatchback" v-model="selectedTypes" /> รถแฮทช์แบค</label>
+          <label><input type="checkbox" value="suv" v-model="selectedTypes" /> รถ SUV ( 7 ที่นั่ง )</label>
+          <label><input type="checkbox" value="mpv" v-model="selectedTypes" /> รถยนต์อเนกประสงค์ ( MPV )</label>
+          <label><input type="checkbox" value="hatchback" v-model="selectedTypes" /> รถตู้</label>
         </div>
 
         <h2>ยี่ห้อรถ</h2>

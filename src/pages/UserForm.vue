@@ -8,8 +8,10 @@
       <div class="content-wrapper">
         <div class="header-text">
           <h1>Registration Form</h1>
-          <p class="welcome-text">Welcome to MafiaCar. You can start by<br>
-          registering your information below.</p>
+          <p class="welcome-text">Welcome to MafiaCar. You can start by registering your information below.
+          <br>
+          Already have account? <RouterLink to="/login-user" class="nav-link">Login now</RouterLink>
+          </p>
         </div>
         <div class="white-box">
           <div class="form-section">
@@ -121,8 +123,14 @@ h1 {
 .welcome-text {
   margin: 0;
   font-size: 1.2rem;
-  line-height: 1.6;
+  line-height: 2;
   opacity: 0.9;
+}
+
+.welcome-text a{
+  color: #275eb6;
+  text-decoration: underline; 
+  font-weight: 600; 
 }
 
 .white-box {
@@ -204,7 +212,7 @@ input {
 }
 
 .register-btn {
-  background-color: #4CAF50;
+  background-color: #4285f4;
   color: white;
   padding: 14px;
   border: none;
@@ -217,7 +225,7 @@ input {
 }
 
 .register-btn:hover {
-  background-color: #45a049;
+  background-color: #275eb6;
 }
 
 @media (max-width: 768px) {

@@ -9,7 +9,10 @@
         <div class="header-text">
           <h1>Affiliate Registration Form</h1>
           <p class="welcome-text">Welcome to affiliate program of MafiaCar. You can start by<br>
-          registering your information below.</p>
+          registering your information below.
+          <br>
+          already have account? <RouterLink to="/login-affiliator" class="nav-link">Login now</RouterLink>
+          </p>
         </div>
         <div class="white-box">
           <div class="form-section">
@@ -123,6 +126,12 @@ h1 {
   font-size: 1.2rem;
   line-height: 1.6;
   opacity: 0.9;
+}
+
+.welcome-text a{
+  color: #4CAF50;
+  text-decoration: underline; 
+  font-weight: 600; 
 }
 
 .white-box {

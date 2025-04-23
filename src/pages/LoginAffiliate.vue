@@ -6,7 +6,7 @@
   <div class="main-container">
     <div class="login-page">
       <div class="login-container">
-        <h1>Login</h1>
+        <h1>Affiliator Login</h1>
         <form @submit.prevent="handleLogin" class="login-form">
           <div class="form-group">
             <label for="username">Username / Email</label>
@@ -122,7 +122,7 @@ input:focus {
 
 .login-button {
   padding: 12px;
-  background-color: #4285f4;
+  background-color: #4CAF50;
   color: white;
   border: none;
   border-radius: 6px;
@@ -134,7 +134,7 @@ input:focus {
 }
 
 .login-button:hover {
-  background-color: #3367d6;
+  background-color: #338f36;
 }
 
 .register-link {
@@ -145,7 +145,7 @@ input:focus {
 }
 
 .register-link a {
-  color: #4285f4;
+  color: #4CAF50;
   text-decoration: none;
   font-weight: 600;
 }
