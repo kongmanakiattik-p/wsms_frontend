@@ -1,12 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Homepage from '../pages/Homepage.vue';
-import LoginUser from '../pages/LoginUser.vue';
-import Userform from '../pages/Userform.vue';
 import LoginAffiliate from '../pages/LoginAffiliate.vue';
 import AffiliatorForm from '../pages/AffiliatorForm.vue';
-import SearchCar from '../pages/SearchCar.vue';
-
+import CarLists from '../pages/CarLists.vue';
+import Dashboard from '../pages/Dashboard.vue';
 import CarDetail from '../pages/CarDetail.vue';
+
 import ShortRent from '../pages/ShortRent.vue';
 import LongRent from '../pages/LongRent.vue';
 import CorporateRent from '../pages/CorporateRent.vue';
@@ -48,16 +47,6 @@ const routes = [
     component: ChauffeurRent,
   },
   {
-    path: '/login-user',
-    name: 'LoginUser', 
-    component: LoginUser,
-  },
-  {
-    path: '/user-form',
-    name: 'Userform',
-    component: Userform,
-  },
-  {
     path: '/login-affiliator',
     name: 'LoginAffiliate',
     component: LoginAffiliate,
@@ -68,9 +57,14 @@ const routes = [
     component: AffiliatorForm,
   },
   {
-    path: '/search-car',
-    name: 'SearchCar',
-    component: SearchCar,
+    path: '/car-lists',
+    name: 'CarLists',
+    component: CarLists,
+  },
+  {
+    path: '/dashboard',
+    name: 'Dashboard',
+    component: Dashboard,
   }
 ];
 

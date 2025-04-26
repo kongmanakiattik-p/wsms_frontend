@@ -1,28 +1,37 @@
 <template>
   <nav class="navbar">
     <div class="logo">
+      <img src="../assets/images/car-rental.png" alt="MafiaCar Logo">
       <h2>MafiaCar</h2>
     </div>
     <div class="nav-links">
-      <RouterLink to="/" class="nav-link">Home</RouterLink>
-      <RouterLink to="/search-car" class="nav-link">Search</RouterLink>
       <template v-if="!isLoggedIn">
-        <RouterLink to="/login-user" class="nav-link">Login/Register</RouterLink>
+        <RouterLink to="/" class="nav-link">Home</RouterLink>
       </template>
+
+      <RouterLink to="/car-lists" class="nav-link">Car Listing</RouterLink>
+
+      <template v-if="!isLoggedIn">
+        <RouterLink to="/login-affiliator" class="nav-link">Login As Affiliator</RouterLink>
+      </template>
+      
       <template v-else>
+        <RouterLink to="/dashboard" class="nav-link">Dashboard</RouterLink>
         <a href="#" @click.prevent="handleLogout" class="nav-link">Logout</a>
       </template>
     </div>
     <!-- Add popup message -->
     <div v-if="showPopup" class="popup" :class="{ 'fade-out': isClosing }">
-      Successfully logged out!
+      Successfully logged out!<br>ออกจากระบบเรียบร้อยแล้ว!
     </div>
   </nav>
 </template>
 
 <script setup>
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'  // Add this import
 
+const router = useRouter()  // Add this line
 const isLoggedIn = ref(false)
 const showPopup = ref(false)
 const isClosing = ref(false)
@@ -32,12 +41,15 @@ const handleLogout = () => {
   showPopup.value = true
   isClosing.value = false
 
-  // Start fade out animation after 2 seconds
+  // Start fade out animation after 5 seconds
   setTimeout(() => {
     isClosing.value = true
-  }, 2000)
+  }, 5000)
 
-  // Hide popup after fade out animation
+  // Hide popup and redirect after fade out animation
+  setTimeout(() => {
+    router.push('/')  // Redirect to home page
+  }, 500)
   setTimeout(() => {
     showPopup.value = false
   }, 2500)

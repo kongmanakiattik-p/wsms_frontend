@@ -7,7 +7,8 @@
           กรองผลลัพธ์ตามความต้องการของคุณ<br />
           เรามีรถหลากหลายรุ่นให้เลือก
         </p>
-        <button class="banner-button">Explore</button>
+        <router-link to="/car-lists" class="banner-button">ดูเพิ่มเติม</router-link>
+
       </div>
     </div>
 

@@ -1,5 +1,23 @@
 <script setup>
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 
+const username = ref('')
+const password = ref('')
+const errorMessage = ref('')
+const router = useRouter()
+
+const handleLogin = () => {
+  // Demo credentials check
+  if (username.value === 'Test' && password.value === 'Pass1234') {
+    // Get NavBar component instance and update login state
+    const navBar = document.querySelector('nav').__vueParentComponent.exposed
+    navBar.isLoggedIn.value = true
+    router.push('/dashboard') // Redirect to home page after successful login
+  } else {
+    errorMessage.value = 'Invalid username or password. Please try again.'
+  }
+}
 </script>
 
 <template>
@@ -26,6 +44,7 @@
               required
             />
           </div>
+          <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
           <button type="submit" class="login-button">Login</button>
         </form>
         <p class="register-link">
@@ -35,26 +54,6 @@
     </div>
   </div>
 </template>
-
-<script>
-export default {
-  name: 'LoginAffiliator',
-  data() {
-    return {
-      username: '',
-      password: ''
-    }
-  },
-  methods: {
-    handleLogin() {
-      console.log('Logging in with:', this.username, this.password);
-    },
-    goToRegister() {
-      console.log('Redirect to register page');
-    }
-  }
-}
-</script>
 
 <style scoped>
 .main-container {
@@ -152,5 +151,11 @@ input:focus {
 
 .register-link a:hover {
   text-decoration: underline;
+}
+.error-message {
+  color: #ff4444;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
 }
 </style>

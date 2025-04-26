@@ -1,6 +1,13 @@
 <template>
   <div v-if="car.name">
       <div class="car-detail-container">
+          <!-- Add return button -->
+          <div class="return-button-container">
+              <button @click="goBack" class="return-button">
+                  <span class="arrow">←</span> ย้อนกลับ
+              </button>
+          </div>
+
           <div class="car-header">
               <h1 class="car-title">{{ car.name }}</h1>
               <div class="car-price">฿{{ car.price.toLocaleString() }}</div>
@@ -41,9 +48,9 @@
                   car.price.toLocaleString() }} บาท</p>
           </div>
 
-          <div class="contact-seller">
+          <!-- <div class="contact-seller">
               <button class="contact-button">ติดต่อผู้ขาย</button>
-          </div>
+          </div> -->
       </div>
   </div>
   <div v-else class="error-message">
@@ -56,7 +63,9 @@
 
 <script setup>
 import { ref } from 'vue';
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
+
+const router = useRouter();
 
 // ประกาศ props ก่อนใช้งาน
 const props = defineProps({
@@ -102,9 +111,40 @@ const getBrandName = (brandKey) => {
 const getTypeName = (typeKey) => {
   return typeNames[typeKey] || typeKey;
 };
+
+const goBack = () => {
+    router.push('/car-lists');
+};
 </script>
 
 <style scoped>
+.return-button-container {
+    margin-bottom: 20px;
+}
+
+.return-button {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    background: transparent;
+    border: 1px solid #e53935;
+    color: #e53935;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.return-button:hover {
+    background: #e53935;
+    color: white;
+}
+
+.arrow {
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
 .car-detail-container {
   max-width: 1200px;
   margin: 0 auto;

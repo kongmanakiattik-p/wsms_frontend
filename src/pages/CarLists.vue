@@ -82,20 +82,23 @@ const filteredCars = computed(() => {
       <div class="filter-section">
         <h2>ประเภทรถ</h2>
         <div class="filter-group">
-          <label><input type="checkbox" value="sedan" v-model="selectedTypes" /> รถเก๋ง</label>
-          <label><input type="checkbox" value="suv" v-model="selectedTypes" /> รถ SUV</label>
+          <label><input type="checkbox" value="eco" v-model="selectedTypes" /> รถ ECO-Car</label>
+          <label><input type="checkbox" value="sedan" v-model="selectedTypes" /> รถเก๋ง (4ประตู Sedan)</label>
+          <label><input type="checkbox" value="suv" v-model="selectedTypes" /> รถ SUV (7 ที่นั่ง)</label>
+          <label><input type="checkbox" value="mpv" v-model="selectedTypes" /> รถอเนกประสงค์ (MPV)</label>
+          <label><input type="checkbox" value="van" v-model="selectedTypes" /> รถตู้</label>
           <label><input type="checkbox" value="pickup" v-model="selectedTypes" /> รถกระบะ</label>
-          <label><input type="checkbox" value="hatchback" v-model="selectedTypes" /> รถแฮทช์แบค</label>
         </div>
 
         <h2>ยี่ห้อรถ</h2>
         <div class="filter-group">
-          <label><input type="checkbox" value="toyota" v-model="selectedBrands" /> โตโยต้า</label>
-          <label><input type="checkbox" value="honda" v-model="selectedBrands" /> ฮอนด้า</label>
-          <label><input type="checkbox" value="isuzu" v-model="selectedBrands" /> อีซูซุ</label>
-          <label><input type="checkbox" value="mitsubishi" v-model="selectedBrands" /> มิตซูบิชิ</label>
-          <label><input type="checkbox" value="ford" v-model="selectedBrands" /> ฟอร์ด</label>
+          <label><input type="checkbox" value="toyota" v-model="selectedBrands" /> โตโยต้า (Toyota)</label>
+          <label><input type="checkbox" value="honda" v-model="selectedBrands" /> ฮอนด้า (Honda)</label>
+          <label><input type="checkbox" value="isuzu" v-model="selectedBrands" /> อีซูซุ (Isuzu)</label>
+          <label><input type="checkbox" value="mitsubishi" v-model="selectedBrands" /> มิตซูบิชิ (Mitsubishi)</label>
+          <label><input type="checkbox" value="ford" v-model="selectedBrands" /> ฟอร์ด (Ford)</label>
           <label><input type="checkbox" value="mg" v-model="selectedBrands" /> MG</label>
+          <label><input type="checkbox" value="hyundai" v-model="selectedBrands" /> อุนได (Hyundai)</label>
         </div>
 
         <h2>ช่วงราคา</h2>
